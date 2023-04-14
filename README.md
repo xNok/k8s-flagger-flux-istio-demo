@@ -6,6 +6,15 @@ Experiments arround Flagger + flux + istio
 
 Install flux -> [Flux Get Started](https://fluxcd.io/flux/get-started/)
 
+Set env variables:
+
+```
+export GITHUB_TOKEN=
+export GITHUB_USER=
+```
+
+Use flux CLI to setup everything
+
 ```
 flux bootstrap github \
   --owner=$GITHUB_USER \
@@ -14,20 +23,6 @@ flux bootstrap github \
   --path=./clusters/minikube \
   --personal
 ```
-
-Install `istioctl` and follow the [Get started Guide](https://istio.io/latest/docs/setup/getting-started/#install)
-
-```
-istioctl manifest install --set profile=default
-```
-
-Install Prometheus
-
-```
-kubectl apply -f prometheus.yaml
-```
-
-Install flagger
 
 ## Resources
 
