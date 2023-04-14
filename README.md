@@ -28,3 +28,7 @@ kubectl apply -f prometheus.yaml
 ```
 
 Install flagger
+
+## Resources
+
+- https://github.com/stefanprodan/gitops-istio
