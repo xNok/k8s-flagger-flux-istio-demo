@@ -5,6 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
+  timeout: 15m
   path: ./infra-resources/istio/system
   prune: true
   wait: true
