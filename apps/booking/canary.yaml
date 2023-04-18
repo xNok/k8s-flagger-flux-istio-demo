@@ -1,24 +1,30 @@
 apiVersion: flagger.app/v1beta1
 kind: Canary
 metadata:
-  name: reviews
+  name: productpage
 spec:
   # deployment reference
   targetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: reviews
+    name: productpage
   # the maximum time in seconds for the canary deployment
   # to make progress before it is rollback (default 600s)
   progressDeadlineSeconds: 120
   # HPA reference (optional)
-  autoscalerRef:
-    apiVersion: autoscaling/v2beta2
-    kind: HorizontalPodAutoscaler
-    name: reviews
+  # autoscalerRef:
+  #   apiVersion: autoscaling/v2beta2
+  #   kind: HorizontalPodAutoscaler
+  #   name: reviews
   service:
     # container port
-    port: 9898
+    port: 9080
+    # Istio gateways (optional)
+    gateways:
+      - istio-system/public-gateway
+    # Istio virtual service host names (optional)
+    hosts:
+      - "*"
   # promote the canary without analysing it (default false)
   skipAnalysis: false
   analysis:
@@ -48,20 +54,3 @@ spec:
         thresholdRange:
           max: 500
         interval: 30s
-    # tests
-    webhooks:
-      - name: conformance-test
-        type: pre-rollout
-        timeout: 15s
-        url: http://flagger-loadtester.prod/
-        metadata:
-          type: bash
-          cmd: "curl -sd 'test' http://backend-canary.prod:9898/token | grep token"
-      - name: load-test
-        type: rollout
-        timeout: 15s
-        url: http://flagger-loadtester.prod/
-        metadata:
-          type: cmd
-          cmd: "hey -z 1m -q 10 -c 2 http://backend-canary.prod:9898/"
-          logCmdOutput: "true"
