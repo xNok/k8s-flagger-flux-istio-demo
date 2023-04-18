@@ -4,3 +4,4 @@ namespace: booking
 resources:
   - ./namespace.yaml
   - ./bookinfo.yaml
+  - ./canaries.yaml
