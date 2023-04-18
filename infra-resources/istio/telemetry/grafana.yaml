@@ -1110,11 +1110,3 @@ metadata:
   creationTimestamp: null
   name: istio-services-grafana-dashboards
   namespace: istio-system
-
----
-configMapGenerator:
-  - name: istio-flagger-grafana-dashboards
-    files:
-      - dashboards/flagger/appmesh.json
-      - dashboards/flagger/envoy.json
-      - dashboards/flagger/istio.json
