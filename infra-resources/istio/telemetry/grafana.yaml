@@ -67,6 +67,13 @@ data:
         path: /var/lib/grafana/dashboards/istio-services
       orgId: 1
       type: file
+    - disableDeletion: false
+      folder: flagger
+      name: istio-flagger
+      options:
+        path: /var/lib/grafana/dashboards/istio-flagger
+      orgId: 1
+      type: file
 ---
 # Source: grafana/templates/service.yaml
 apiVersion: v1
