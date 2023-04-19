@@ -43,7 +43,7 @@
           "rgba(237, 129, 40, 0.89)",
           "rgba(50, 172, 45, 0.97)"
         ],
-        "datasource": "prometheus",
+        "datasource": "Prometheus",
         "format": "ops",
         "gauge": {
           "maxValue": 100,
@@ -126,7 +126,7 @@
           "rgba(237, 129, 40, 0.89)",
           "rgba(245, 54, 54, 0.9)"
         ],
-        "datasource": "prometheus",
+        "datasource": "Prometheus",
         "decimals": null,
         "format": "percentunit",
         "gauge": {
@@ -209,7 +209,7 @@
           "rgba(237, 129, 40, 0.89)",
           "rgba(50, 172, 45, 0.97)"
         ],
-        "datasource": "prometheus",
+        "datasource": "Prometheus",
         "format": "ops",
         "gauge": {
           "maxValue": 100,
@@ -292,7 +292,7 @@
           "rgba(237, 129, 40, 0.89)",
           "rgba(245, 54, 54, 0.9)"
         ],
-        "datasource": "prometheus",
+        "datasource": "Prometheus",
         "decimals": null,
         "format": "percentunit",
         "gauge": {
@@ -371,7 +371,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "prometheus",
+        "datasource": "Prometheus",
         "fill": 1,
         "gridPos": {
           "h": 4,
@@ -461,7 +461,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "prometheus",
+        "datasource": "Prometheus",
         "fill": 1,
         "gridPos": {
           "h": 4,
@@ -566,7 +566,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "prometheus",
+        "datasource": "Prometheus",
         "fill": 1,
         "gridPos": {
           "h": 6,
@@ -656,7 +656,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "prometheus",
+        "datasource": "Prometheus",
         "fill": 1,
         "gridPos": {
           "h": 6,
@@ -746,7 +746,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "prometheus",
+        "datasource": "Prometheus",
         "fill": 1,
         "gridPos": {
           "h": 6,
@@ -838,7 +838,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "prometheus",
+        "datasource": "Prometheus",
         "fill": 1,
         "gridPos": {
           "h": 6,
@@ -930,7 +930,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "prometheus",
+        "datasource": "Prometheus",
         "fill": 1,
         "gridPos": {
           "h": 6,
@@ -1036,7 +1036,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "prometheus",
+        "datasource": "Prometheus",
         "fill": 1,
         "gridPos": {
           "h": 6,
@@ -1146,7 +1146,7 @@
       "list": [
         {
           "allValue": null,
-          "datasource": "prometheus",
+          "datasource": "Prometheus",
           "definition": "query_result(sum(envoy_cluster_upstream_rq) by (kubernetes_namespace))",
           "hide": 0,
           "includeAll": false,
@@ -1167,7 +1167,7 @@
         },
         {
           "allValue": null,
-          "datasource": "prometheus",
+          "datasource": "Prometheus",
           "definition": "query_result(sum(envoy_cluster_upstream_rq{kubernetes_namespace=\"$namespace\",app=~\".*-primary\"}) by (app))",
           "hide": 0,
           "includeAll": false,
@@ -1188,7 +1188,7 @@
         },
         {
           "allValue": null,
-          "datasource": "prometheus",
+          "datasource": "Prometheus",
           "definition": "query_result(sum(envoy_cluster_upstream_rq{kubernetes_namespace=\"$namespace\",app!~\".*-primary\"}) by (app))",
           "hide": 0,
           "includeAll": false,
