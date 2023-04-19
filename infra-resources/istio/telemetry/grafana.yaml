@@ -146,6 +146,8 @@ spec:
               mountPath: "/var/lib/grafana/dashboards/istio"
             - name: dashboards-istio-services
               mountPath: "/var/lib/grafana/dashboards/istio-services"
+            - name: dashboards-istio-flagger
+              mountPath: "/var/lib/grafana/dashboards/istio-flagger"
             - name: config
               mountPath: "/etc/grafana/provisioning/datasources/datasources.yaml"
               subPath: "datasources.yaml"
@@ -191,7 +193,7 @@ spec:
         - name: config
           configMap:
             name: grafana
-
+        # Dashboard
         - name: dashboards-istio
           configMap:
             name: istio-grafana-dashboards
