@@ -24,6 +24,14 @@ flux bootstrap github \
   --personal
 ```
 
+## Load Testing
+
+Install [k6](https://k6.io/docs/get-started/installation/)
+
+```
+k6 run -e MY_HOSTNAME=${INGRESS_IP} loadtesting/productpage.js
+```
+
 ## Resources
 
 - https://github.com/stefanprodan/gitops-istio
