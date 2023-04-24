@@ -171,6 +171,8 @@ spec:
       version: v1
   template:
     metadata:
+      # To retry a release you can add or change an annotation on the pod template
+      FailedCanaryRetrytimestamp: "2023-04-24T13:45:29+00:00"
       labels:
         app: reviews
         version: v1
