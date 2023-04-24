@@ -20,46 +20,48 @@ spec:
     metadata:
       annotations:
         prometheus.io/scrape: "true"
+        # To retry a release you can add or change an annotation on the pod template
+        timestamp: "2023-04-24T14:12:00+00:00"
       labels:
         app: backend
     spec:
       containers:
-      - name: backend
-        image: ghcr.io/stefanprodan/podinfo:5.0.0
-        imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 9898
-          name: http
-          protocol: TCP
-        command:
-        - ./podinfo
-        - --port=9898
-        - --level=info
-        env:
-        - name: PODINFO_UI_COLOR
-          value: "#34577c"
-        livenessProbe:
-          exec:
-            command:
-            - podcli
-            - check
-            - http
-            - localhost:9898/healthz
-          initialDelaySeconds: 5
-          timeoutSeconds: 5
-        readinessProbe:
-          exec:
-            command:
-            - podcli
-            - check
-            - http
-            - localhost:9898/readyz
-          initialDelaySeconds: 5
-          timeoutSeconds: 5
-        resources:
-          limits:
-            cpu: 2000m
-            memory: 512Mi
-          requests:
-            cpu: 10m
-            memory: 16Mi
+        - name: backend
+          image: ghcr.io/stefanprodan/podinfo:5.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9898
+              name: http
+              protocol: TCP
+          command:
+            - ./podinfo
+            - --port=9898
+            - --level=info
+          env:
+            - name: PODINFO_UI_COLOR
+              value: "#34577c"
+          livenessProbe:
+            exec:
+              command:
+                - podcli
+                - check
+                - http
+                - localhost:9898/healthz
+            initialDelaySeconds: 5
+            timeoutSeconds: 5
+          readinessProbe:
+            exec:
+              command:
+                - podcli
+                - check
+                - http
+                - localhost:9898/readyz
+            initialDelaySeconds: 5
+            timeoutSeconds: 5
+          resources:
+            limits:
+              cpu: 2000m
+              memory: 512Mi
+            requests:
+              cpu: 10m
+              memory: 16Mi
