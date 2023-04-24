@@ -21,7 +21,7 @@ spec:
       annotations:
         prometheus.io/scrape: "true"
         # To retry a release you can add or change an annotation on the pod template
-        timestamp: "2023-04-24T15:02:31+00:00"
+        timestamp: "2023-04-24T16:58:11+00:00"
       labels:
         app: backend
     spec:
