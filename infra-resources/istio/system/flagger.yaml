@@ -27,5 +27,4 @@ spec:
   interval: 1h0m0s
   values:
     meshProvider: istio
-    prometheus:
-      install: false
+    metricsServer: http://prometheus.istio-system:9090
