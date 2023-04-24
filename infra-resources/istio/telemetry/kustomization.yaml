@@ -10,6 +10,4 @@ resources:
 configMapGenerator:
   - name: istio-flagger-grafana-dashboards
     files:
-      - dashboards/flagger/appmesh.json
-      - dashboards/flagger/envoy.json
       - dashboards/flagger/istio.json

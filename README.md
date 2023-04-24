@@ -32,10 +32,14 @@ Install [k6](https://k6.io/docs/get-started/installation/)
 k6 run -e MY_HOSTNAME=${INGRESS_IP} loadtesting/productpage.js
 ```
 
-## Kiali
+## Monitoring Kiali / Graphana
 
 ```
 istioctl dashboard kiali
+```
+
+```
+kubectl -n istio-system port-forward svc/grafana 3000:80
 ```
 
 ## Resources
