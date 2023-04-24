@@ -23,7 +23,7 @@ spec:
   interval: 30m0s
   dependsOn:
     - name: istio-system
-  path: ./apps/pod-info
+  path: ./apps/podinfo
   prune: true
   wait: true
   timeout: 2m0s
