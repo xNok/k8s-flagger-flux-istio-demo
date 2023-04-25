@@ -1,11 +1,11 @@
 import http from 'k6/http';
 import { sleep } from 'k6';
 export const options = {
-    vus: 10,
+    vus: 2,
     duration: '300s',
   };
 
 export default function () {
-  http.get(`http://${__ENV.MY_HOSTNAME}/productpage`);
+  http.get(`http://productpage.booking/productpage`);
   sleep(1);
 }
