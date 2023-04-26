@@ -27,7 +27,6 @@ spec:
   interval: 10m0s
   dependsOn:
     - name: istio-system
-  interval: 10m0s
   path: ./infra-resources/istio/gateway
   prune: true
   wait: true
@@ -41,9 +40,10 @@ metadata:
   name: istio-telemetry
   namespace: flux-system
 spec:
+  timeout: 5m0s
+  interval: 10m0s
   dependsOn:
     - name: istio-system
-  interval: 10m0s
   path: ./infra-resources/istio/telemetry
   prune: true
   wait: true
