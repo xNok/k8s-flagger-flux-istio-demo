@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./apps/loadtester
+  path: ./infra-resources/loadtester
   prune: true
   wait: true
   sourceRef:
@@ -20,7 +20,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./apps/k6-loadtester
+  path: ./infra-resources/k6-loadtester
   prune: true
   wait: true
   sourceRef:
