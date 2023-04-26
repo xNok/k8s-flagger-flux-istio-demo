@@ -75,4 +75,4 @@ spec:
         timeout: 5s
         metadata:
           type: cmd
-          cmd: "ghz --insecure --proto=/tmp/ghz/health.proto --call=grpc.health.v1.Health/Check podinfo.test:9898"
+          cmd: "ghz --insecure --proto=/tmp/ghz/health.proto --call=grpc.health.v1.Health/Check podinfo.test:9899"
