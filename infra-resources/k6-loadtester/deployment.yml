@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: k6-loadtester
-  namespace: flagger-system
+  namespace: test
 spec:
   replicas: 1
   selector:
