@@ -4,8 +4,8 @@ metadata:
   name: istio-system
   namespace: flux-system
 spec:
+  timeout: 5m0s
   interval: 10m0s
-  timeout: 15m
   path: ./infra-resources/istio/system
   prune: true
   wait: true
@@ -23,6 +23,8 @@ metadata:
   name: istio-gateway
   namespace: flux-system
 spec:
+  timeout: 5m0s
+  interval: 10m0s
   dependsOn:
     - name: istio-system
   interval: 10m0s
