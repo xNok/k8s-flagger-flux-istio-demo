@@ -15,7 +15,6 @@ spec:
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "8080"
-        openservicemesh.io/inbound-port-exclusion-list: "80, 8080"
     spec:
       containers:
         - name: loadtester
@@ -27,8 +26,7 @@ spec:
           command:
             - ./loadtester
             - -port=8080
-            - -log-level=info
-            - -timeout=1h
+            - -log-level=debug
           livenessProbe:
             exec:
               command:
@@ -58,4 +56,4 @@ spec:
               cpu: "10m"
           securityContext:
             readOnlyRootFilesystem: true
-            runAsUser: 10001
+            # runAsUser: 10001 # investigrating why it can't read protos on in the container owned by app
