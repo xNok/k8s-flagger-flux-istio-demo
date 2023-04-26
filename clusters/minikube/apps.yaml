@@ -1,19 +1,19 @@
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  name: booking
-  namespace: flux-system
-spec:
-  interval: 10m0s
-  dependsOn:
-    - name: istio-system
-  path: ./apps/booking
-  prune: true
-  wait: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
----
+# apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+# kind: Kustomization
+# metadata:
+#   name: booking
+#   namespace: flux-system
+# spec:
+#   interval: 10m0s
+#   dependsOn:
+#     - name: istio-system
+#   path: ./apps/booking
+#   prune: true
+#   wait: true
+#   sourceRef:
+#     kind: GitRepository
+#     name: flux-system
+# ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
@@ -27,6 +27,22 @@ spec:
   prune: true
   wait: true
   timeout: 2m0s
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: loadtester
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  dependsOn:
+    - name: istio-system
+  path: ./apps/loadtester
+  prune: true
+  wait: true
   sourceRef:
     kind: GitRepository
     name: flux-system
