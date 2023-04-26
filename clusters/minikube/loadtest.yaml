@@ -6,9 +6,21 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  dependsOn:
-    - name: istio-system
   path: ./apps/loadtester
+  prune: true
+  wait: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: k6-loadtester
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ./apps/k6-loadtester
   prune: true
   wait: true
   sourceRef:
