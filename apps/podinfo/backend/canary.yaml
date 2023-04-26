@@ -20,6 +20,9 @@ spec:
   service:
     # container port
     port: 9898
+    # add all the other container ports
+    # to the ClusterIP services (default false)
+    portDiscovery: true
   # promote the canary without analysing it (default false)
   skipAnalysis: false
   analysis:

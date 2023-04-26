@@ -30,13 +30,22 @@ spec:
           image: ghcr.io/stefanprodan/podinfo:5.0.0
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 9898
-              name: http
+            - name: http
+              containerPort: 9898
+              protocol: TCP
+            - name: https
+              containerPort: 9898
+              protocol: TCP
+            - name: grpc
+              containerPort: 9999
               protocol: TCP
           command:
             - ./podinfo
-            - --port=9898
             - --level=info
+            # externalPort
+            - --port=9898
+            # grpcPort
+            - --grpc-port=9999
           env:
             - name: PODINFO_UI_COLOR
               value: "#34577c"

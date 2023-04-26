@@ -29,7 +29,7 @@ flux bootstrap github \
 Install [k6](https://k6.io/docs/get-started/installation/)
 
 ```
-k6 run -e MY_HOSTNAME=${INGRESS_IP} loadtesting/productpage.js
+k6 run -e MY_HOSTNAME=${INGRESS_IP} loadtesting/productpage/productpage.js
 ```
 
 ## Monitoring Kiali / Graphana
@@ -41,6 +41,10 @@ istioctl dashboard kiali
 ```
 kubectl -n istio-system port-forward svc/grafana 3000:80
 ```
+
+## Scenarios - Experiments
+
+### Rollout
 
 ## Resources
 
