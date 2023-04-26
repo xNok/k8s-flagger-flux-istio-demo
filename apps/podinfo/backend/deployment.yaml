@@ -33,9 +33,6 @@ spec:
             - name: http
               containerPort: 9898
               protocol: TCP
-            - name: https
-              containerPort: 9898
-              protocol: TCP
             - name: grpc
               containerPort: 9999
               protocol: TCP
